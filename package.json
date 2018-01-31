@@ -1,0 +1,25 @@
+{
+  "name": "angularjs-nouislider",
+  "version": "0.1.0",
+  "description": "An AngularJS wrapper for noUiSlider with as little overhead as possible",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LuudJanssen/angularjs-nouislider.git"
+  },
+  "keywords": [
+    "nouislider",
+    "angularjs",
+    "angular",
+    "wrapper"
+  ],
+  "author": "Luud Janssen",
+  "license": "WTFPL",
+  "bugs": {
+    "url": "https://github.com/LuudJanssen/angularjs-nouislider/issues"
+  },
+  "homepage": "https://github.com/LuudJanssen/angularjs-nouislider#readme"
+}
