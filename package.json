@@ -2,9 +2,10 @@
   "name": "angularjs-nouislider",
   "version": "0.1.0",
   "description": "An AngularJS wrapper for noUiSlider with as little overhead as possible",
-  "main": "index.js",
+  "main": "src/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "webpack",
+    "watch": "webpack --watch"
   },
   "repository": {
     "type": "git",
@@ -21,5 +22,22 @@
   "bugs": {
     "url": "https://github.com/LuudJanssen/angularjs-nouislider/issues"
   },
-  "homepage": "https://github.com/LuudJanssen/angularjs-nouislider#readme"
+  "homepage": "https://github.com/LuudJanssen/angularjs-nouislider#readme",
+  "dependencies": {
+    "angular": "^1.6.8",
+    "nouislider": "^11.0.3"
+  },
+  "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "babel-preset-airbnb": "^2.4.0",
+    "eslint": "^4.16.0",
+    "eslint-config-airbnb-base": "^12.1.0",
+    "eslint-loader": "^1.9.0",
+    "eslint-plugin-import": "^2.8.0",
+    "webpack": "^3.10.0",
+    "webpack-dev-server": "^2.11.1",
+    "webpack-merge": "^4.1.1",
+    "webpack-node-externals": "^1.6.0"
+  }
 }
