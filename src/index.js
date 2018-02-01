@@ -1,7 +1,4 @@
-export class Test {
-  constructor(name) {
-    this.name = name;
-  }
-}
+import ngModule from './module';
+import './directive';
 
-export const testInstance = new Test('test');
+export default ngModule;

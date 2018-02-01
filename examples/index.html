@@ -1,11 +1,35 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="noUiSliderExamplesApp">
 <head>
     <meta charset="UTF-8">
-    <title>angularjs-nouislider examples</title>
+    <title>angularjs-nouislider</title>
 </head>
-<body>
+<body ng-controller="examplesController">
+<main>
+  <h1>angularjs-nouislider examples</h1>
 
-<script src=""
+  <article>
+    <h2>Slider without ngModel</h2>
+
+    <div no-ui-slider
+         slider-options="{{ optionsWithStart }}"
+         slider-created="onSliderCreated(api)"></div>
+
+    <angular-jsoneditor ng-model="optionsWithStart" options="jsonEditorOptions"></angular-jsoneditor>
+  </article>
+
+  <article>
+    <h2>Slider with ngModel</h2>
+
+    <div no-ui-slider
+         slider-options="{{ optionsWithoutStart }}"
+         ng-model="sliderPositions"></div>
+
+    <angular-jsoneditor ng-model="optionsWithoutStart" options="jsonEditorOptions"></angular-jsoneditor>
+
+    <strong>Model:</strong>
+    <pre>{{ sliderPositions | json }}</pre>
+  </article>
+</main>
 </body>
 </html>

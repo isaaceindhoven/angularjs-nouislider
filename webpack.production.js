@@ -1,15 +1,22 @@
+const path = require('path');
 const merge = require('webpack-merge');
 const externals = require('webpack-node-externals');
+const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
+const CleanWebpackPlugin = require('clean-webpack-plugin');
 const common = require('./webpack.common.js');
-const libraryName = 'angularjs-nouislider';
 
 module.exports = merge(common, {
   output: {
-    path: path.resolve(__dirname, 'lib'),
-    filename: libraryName + '.js',
-    library: libraryName,
-    libraryTarget: 'umd',
-    umdNamedDefine: true
+    path: path.resolve(__dirname, 'dist')
   },
-  externals: [externals()]
+  plugins: [
+    new CleanWebpackPlugin(['dist']),
+    new UglifyJSPlugin({
+      sourceMap: true,
+      parallel: true,
+      cache: true
+    })
+  ],
+  devtool: 'source-map',
+  externals: [ externals() ]
 });

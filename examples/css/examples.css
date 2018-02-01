@@ -1,0 +1,26 @@
+angular-jsoneditor {
+  display: block;
+  margin: 16px 0;
+  height: 400px;
+}
+
+main {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  max-width: 100%;
+  padding: 0 24px;
+  font-family: sans-serif;
+}
+
+h1 {
+  flex: 0 0 100%;
+  text-align: center;
+}
+
+article {
+  box-sizing: border-box;
+  flex: 1 1 50%;
+  min-width: 400px;
+  padding: 12px;
+}

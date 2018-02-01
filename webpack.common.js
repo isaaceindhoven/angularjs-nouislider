@@ -1,5 +1,4 @@
 const path = require('path');
-
 const libraryName = 'angularjs-nouislider';
 
 module.exports = {
@@ -8,7 +7,7 @@ module.exports = {
     filename: libraryName + '.js',
     library: libraryName,
     libraryTarget: 'umd',
-    umdNamedDefine: true
+    umdNamedDefine: true,
   },
   module: {
     rules: [
@@ -16,17 +15,13 @@ module.exports = {
         test: /\.js$/,
         exclude: /node_modules/,
         loader: 'eslint-loader',
-        enforce: 'pre'
+        enforce: 'pre',
       },
       {
         test: /\.js$/,
         exclude: /node_modules/,
-        loader: 'babel-loader'
-      }
+        loader: 'babel-loader',
+      },
     ]
-  },
-  devtool: 'source-map',
-  devServer: {
-    contentBase: './example'
   },
 };
