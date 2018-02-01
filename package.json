@@ -5,6 +5,7 @@
   "main": "dist/angularjs-nouislider.js",
   "scripts": {
     "build": "webpack --config webpack.production.js",
+    "build-examples": "webpack --config webpack.development.js",
     "start": "webpack-dev-server --open --config webpack.development.js"
   },
   "repository": {

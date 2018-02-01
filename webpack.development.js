@@ -7,7 +7,7 @@ const common = require('./webpack.common.js');
 module.exports = merge(common, {
   entry: './examples/js/examples.js',
   output: {
-    path: path.resolve(__dirname, 'tmp'),
+    path: path.resolve(__dirname, 'dist/examples'),
   },
   module: {
     rules: [
@@ -21,7 +21,7 @@ module.exports = merge(common, {
     ],
   },
   plugins: [
-    new CleanWebpackPlugin(['tmp']),
+    new CleanWebpackPlugin(['dist/examples']),
     new HtmlWebpackPlugin({
       template: './examples/index.html',
       minify: {},
@@ -29,6 +29,6 @@ module.exports = merge(common, {
   ],
   devtool: 'source-map',
   devServer: {
-    contentBase: './tmp',
+    contentBase: './dist/examples',
   },
 });
