@@ -1,8 +1,8 @@
 import angular from 'angular';
 import noUiSlider from 'nouislider';
-import ngModule from './module';
+import { module } from './module';
 
-ngModule.directive('noUiSlider', ($timeout, $q, $log) => ({
+module.directive('noUiSlider', ($timeout, $q, $log) => ({
   restrict: 'AE',
   require: '?ngModel',
   scope: {

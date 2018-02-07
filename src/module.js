@@ -1,6 +1,4 @@
 import angular from 'angular';
 
-const moduleName = 'noUiSlider';
-angular.module(moduleName, []);
-
-export default moduleName;
+export const moduleName = 'noUiSlider';
+export const module = angular.module(moduleName, []);

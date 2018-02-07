@@ -2,7 +2,7 @@ import angular from 'angular';
 import 'angular-jsoneditor';
 import '../css/examples.css';
 
-const noUiSliderExamplesApp = angular.module('noUiSliderExamplesApp', ['nouislider', 'angular-jsoneditor']);
+const noUiSliderExamplesApp = angular.module('noUiSliderExamplesApp', ['noUiSlider', 'angular-jsoneditor']);
 
 noUiSliderExamplesApp.controller('examplesController', ($scope, $log) => {
   $scope.sliderPositions = [20, 80];

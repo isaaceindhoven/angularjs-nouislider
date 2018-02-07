@@ -17,5 +17,10 @@ You can also create pull requests when you've fixed a bug or introduced a new fe
 
 Using this setup you can test your code using the examples page. As an extra it encourages you to make an example specific to your use, if you're building a new feature.
 
+When finished writing your code, execute the following to build the dist files:
+
+1. Run `npm run build` to transpile and build the module's files
+3. Tun `npm run examples` to build the example files. **Always run this command after running `npm start` since this command removes the `dist` folders to ensure correct building and to be able to run the development server in memory.**
+
 ## Linting
 We use ESLint using the [Airbnb base ESLint configuration](https://www.npmjs.com/package/eslint-config-airbnb-base) with some small additions. 
