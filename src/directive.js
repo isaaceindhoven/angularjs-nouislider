@@ -14,7 +14,7 @@ ngModule.directive('noUiSlider', ($timeout, $q, $log) => ({
     let options = angular.fromJson(scope.options);
 
     /**
-     * Extends the API returned by NoUiSlider with the `$on` function which wraps the `on` function to use Angular.
+     * Extends the API returned by noUiSlider with the `$on` function which wraps the `on` function to use Angular.
      *
      * @param {Object} api The API instance returned by the `noUiSlider.create()` method
      * @return {Object} The API instance with the added `$on` function
@@ -55,7 +55,7 @@ ngModule.directive('noUiSlider', ($timeout, $q, $log) => ({
 
     /**
      * Creates a watcher that looks for changes in the `slider-options` directive attribute. When a change is detected
-     * the options for the NoUiSlider instance are updated. Note that only the 'margin', 'limit', 'step', 'range',
+     * the options for the noUiSlider instance are updated. Note that only the 'margin', 'limit', 'step', 'range',
      * 'animate' and 'snap' options can be updated this way (as documented in
      * https://refreshless.com/nouislider/more/#section-update). All other option updates require you to destroy the
      * current instance and create a new one.
@@ -76,7 +76,7 @@ ngModule.directive('noUiSlider', ($timeout, $q, $log) => ({
 
     /**
      * Add ngModel controls to the directive. This allows the use of ngModel to set and get the value in the slider. It
-     * uses the NoUiSlider API's get and set functions, so no custom formatters need to be defined for ngModel. The
+     * uses the noUiSlider API's get and set functions, so no custom formatters need to be defined for ngModel. The
      * ngModelOptions can be used.
      *
      * @param {Object} api The API instance returned by the `noUiSlider.create()` method
@@ -116,7 +116,7 @@ ngModule.directive('noUiSlider', ($timeout, $q, $log) => ({
     }
 
     /**
-     * Creates a NoUiSlider instance.
+     * Creates a noUiSlider instance.
      */
     function createInstance() {
       const api = extendApi(noUiSlider.create(htmlElement, options));
@@ -134,11 +134,11 @@ ngModule.directive('noUiSlider', ($timeout, $q, $log) => ({
       .then(($modelValue) => {
         if ($modelValue !== null) {
 
-          // If ngModel is being used, (over)write the start option for the NoUiSlider options
+          // If ngModel is being used, (over)write the start option for the noUiSlider options
           options.start = $modelValue;
         }
 
-        // Create a NoUiSlider instance
+        // Create a noUiSlider instance
         createInstance();
       })
       .catch($log.error);
