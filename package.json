@@ -28,7 +28,7 @@
   "bugs": {
     "url": "https://github.com/LuudJanssen/angularjs-nouislider/issues"
   },
-  "homepage": "https://github.com/LuudJanssen/angularjs-nouislider#readme",
+  "homepage": "https://luudjanssen.github.io/angularjs-nouislider/",
   "dependencies": {
     "angular": "^1.6.8",
     "nouislider": "^11.0.3"
