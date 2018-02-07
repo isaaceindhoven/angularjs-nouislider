@@ -8,7 +8,7 @@ module.exports = {
   entry: './src-examples/js/examples',
   output: {
     filename: 'examples.js',
-    path: path.resolve(__dirname, 'docs'),
+    path: path.resolve(__dirname, 'examples'),
     publicPath: '',
   },
   module: {
@@ -36,7 +36,7 @@ module.exports = {
     ],
   },
   plugins: [
-    new CleanWebpackPlugin(['docs']),
+    new CleanWebpackPlugin(['examples']),
     new ExtractTextPlugin('examples.css'),
     new HtmlWebpackPlugin({
       template: './src-examples/index.html',
@@ -49,7 +49,7 @@ module.exports = {
   ],
   devtool: 'source-map',
   devServer: {
-    contentBase: ['./docs', './dist', './'],
+    contentBase: ['./examples', './dist', './'],
   },
   externals: {
     angular: 'angular',
