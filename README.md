@@ -75,13 +75,14 @@ The directive exported by this module is called `noUiSlider` and can be used wit
 
 ### Using ngModel
 When using ngModel you can use the directive like this:
-[//]: <> ({% raw %})
+
+<!-- {% raw %} -->
 ```html
 <div no-ui-slider
      slider-options="{{ optionsWithoutStart }}"
      ng-model="sliderPositions"></div>
 ```
-[//]: <> ({% endraw %})
+<!-- {% endraw %}) -->
 
 In this case you don't have to add the `start` option to the noUiSlider options because the model value is used. In this case your scope could be:
 
