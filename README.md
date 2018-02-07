@@ -1,5 +1,5 @@
 # angularjs-nouislider
-An AngularJS wrapper for the [noUiSlider](https://refreshless.com/nouislider/) range slider with as little overhead as possible. The module is ~2kb when minimized and gzipped.
+An AngularJS wrapper for the [noUiSlider](https://refreshless.com/nouislider/) range slider with minimal overhead. The module is ~2kb when minimized and gzipped.
 
 ## Demo
 Two demos can be found [here](https://luudjanssen.github.io/angularjs-nouislider/examples). One demo without the use of `ngModel` and one with the use of `ngModel`.
