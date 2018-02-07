@@ -104,11 +104,13 @@ Note that the directive uses the [`noUiSliderInstance.get()` and `noUiSliderInst
 When you don't want to use the ngModel you will probably want to use the API that `noUiSlider.create()` returns. This instance can be retreived from the directive by writing an expression in the `slider-created` attribute. Example:
 
 **Your model**
+<!-- {% raw %} -->
 ```html
 <div no-ui-slider
      slider-options="{{ optionsWithStart }}"
      slider-created="onSliderCreated(api)"></div>
 ```
+<!-- {% endraw %}) -->
 
 **Your scope**
 ```javascript
