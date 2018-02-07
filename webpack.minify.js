@@ -10,7 +10,7 @@ module.exports = merge(build, {
     new UglifyJSPlugin({
       sourceMap: true,
       parallel: true,
-      cache: true
+      cache: true,
     }),
   ],
 });
