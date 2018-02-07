@@ -83,6 +83,7 @@ return /******/ (function(modules) { // webpackBootstrap
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
+exports.module = exports.moduleName = undefined;
 
 var _angular = __webpack_require__(1);
 
@@ -90,10 +91,9 @@ var _angular2 = _interopRequireDefault(_angular);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var moduleName = 'noUiSlider';
-_angular2.default.module(moduleName, []);
-
-exports.default = moduleName;
+var moduleName = exports.moduleName = 'noUiSlider';
+var _module = _angular2.default.module(moduleName, []);
+exports.module = _module;
 
 /***/ }),
 /* 1 */
@@ -114,13 +114,9 @@ Object.defineProperty(exports, "__esModule", {
 
 var _module = __webpack_require__(0);
 
-var _module2 = _interopRequireDefault(_module);
-
 __webpack_require__(3);
 
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-exports.default = _module2.default;
+exports.default = _module.moduleName;
 
 /***/ }),
 /* 3 */
@@ -137,18 +133,16 @@ var _nouislider = __webpack_require__(4);
 
 var _nouislider2 = _interopRequireDefault(_nouislider);
 
-var _module = __webpack_require__(0);
-
-var _module2 = _interopRequireDefault(_module);
+var _module2 = __webpack_require__(0);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-_module2.default.directive('noUiSlider', ['$timeout', '$q', '$log', function ($timeout, $q, $log) {
+_module2.module.directive('noUiSlider', ['$timeout', '$q', '$log', function ($timeout, $q, $log) {
   return {
     restrict: 'AE',
     require: '?ngModel',
     scope: {
-      created: '&sliderCreated',
+      created: '&?sliderCreated',
       options: '@sliderOptions'
     },
     link: function link(scope, element, attrs, ngModel) {
