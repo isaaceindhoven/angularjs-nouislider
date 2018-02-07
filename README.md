@@ -55,6 +55,7 @@ var noUiSliderModule = require('angularjs-nouislider');
 angular.module('myModule', [noUiSliderModule]);
 ```
 
+
 ### Using global variables (not recommended)
 Because webpack currently [doesn't support exporting multiple library names](https://github.com/webpack/webpack/issues/5877) we're stuck with the hyphenated globally exported variable, which can be accessed and used using
 ```javascript
@@ -74,11 +75,13 @@ The directive exported by this module is called `noUiSlider` and can be used wit
 
 ### Using ngModel
 When using ngModel you can use the directive like this:
+[//]: <> ({% raw %})
 ```html
 <div no-ui-slider
      slider-options="{{ optionsWithoutStart }}"
      ng-model="sliderPositions"></div>
 ```
+[//]: <> ({% endraw %})
 
 In this case you don't have to add the `start` option to the noUiSlider options because the model value is used. In this case your scope could be:
 
