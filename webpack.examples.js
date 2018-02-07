@@ -8,8 +8,8 @@ module.exports = {
   entry: './src-examples/js/examples',
   output: {
     filename: 'examples.js',
-    path: path.resolve(__dirname, 'dist-examples'),
-    publicPath: '/'
+    path: path.resolve(__dirname, 'docs'),
+    publicPath: '/',
   },
   module: {
     rules: [
@@ -17,41 +17,41 @@ module.exports = {
         test: /\.js$/,
         exclude: /node_modules/,
         loader: 'eslint-loader',
-        enforce: 'pre'
+        enforce: 'pre',
       },
       {
         test: /\.js$/,
         exclude: /node_modules/,
-        loader: 'babel-loader'
+        loader: 'babel-loader',
       },
       {
         test: /\.css$/,
         use: ExtractTextPlugin.extract({
-          fallback: "style-loader",
+          fallback: 'style-loader',
           use: [
-            { loader: "css-loader", options: { minimize: true } }
-          ]
+            { loader: 'css-loader', options: { minimize: true } },
+          ],
         }),
       },
-    ]
+    ],
   },
   plugins: [
-    new CleanWebpackPlugin(['dist-examples']),
-    new ExtractTextPlugin("examples.css"),
+    new CleanWebpackPlugin(['docs']),
+    new ExtractTextPlugin('examples.css'),
     new HtmlWebpackPlugin({
       template: './src-examples/index.html',
     }),
     new UglifyJSPlugin({
       sourceMap: true,
       parallel: true,
-      cache: true
+      cache: true,
     }),
   ],
   devtool: 'source-map',
   devServer: {
-    contentBase: ['./dist-examples', './dist', './'],
+    contentBase: ['./docs', './dist', './'],
   },
   externals: {
-    angular: 'angular'
-  }
+    angular: 'angular',
+  },
 };

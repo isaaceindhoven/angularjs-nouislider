@@ -29,6 +29,11 @@ module.exports = {
   devtool: 'source-map',
   externals: {
     angular: 'angular',
-    noUiSlider: 'nouislider',
+    nouislider: {
+      commonjs: 'nouislider',
+      commonjs2: 'nouislider',
+      amd: 'nouislider',
+      root: 'noUiSlider',
+    },
   },
 };

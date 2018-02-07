@@ -1,3 +1,6 @@
 import angular from 'angular';
 
-export default angular.module('nouislider', []);
+const moduleName = 'noUiSlider';
+angular.module(moduleName, []);
+
+export default moduleName;
