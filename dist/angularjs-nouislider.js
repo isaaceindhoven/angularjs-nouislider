@@ -143,11 +143,11 @@ _module2.module.directive('noUiSlider', ['$timeout', '$q', '$log', function ($ti
     require: '?ngModel',
     scope: {
       created: '&?sliderCreated',
-      options: '@sliderOptions'
+      options: '=?sliderOptions'
     },
     link: function link(scope, element, attrs, ngModel) {
       var htmlElement = element[0];
-      var options = _angular2.default.fromJson(scope.options);
+      var options = _angular2.default.copy(scope.options);
 
       /**
        * Extends the API returned by noUiSlider with the `$on` function which wraps the `on` function
@@ -205,7 +205,7 @@ _module2.module.directive('noUiSlider', ['$timeout', '$q', '$log', function ($ti
             return;
           }
 
-          options = _angular2.default.fromJson(scope.options);
+          options = _angular2.default.copy(scope.options);
 
           api.updateOptions(options);
         });

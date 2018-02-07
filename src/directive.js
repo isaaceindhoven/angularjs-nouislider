@@ -7,11 +7,11 @@ module.directive('noUiSlider', ($timeout, $q, $log) => ({
   require: '?ngModel',
   scope: {
     created: '&?sliderCreated',
-    options: '@sliderOptions',
+    options: '=?sliderOptions',
   },
   link: (scope, element, attrs, ngModel) => {
     const htmlElement = element[0];
-    let options = angular.fromJson(scope.options);
+    let options = angular.copy(scope.options);
 
     /**
      * Extends the API returned by noUiSlider with the `$on` function which wraps the `on` function
@@ -69,7 +69,7 @@ module.directive('noUiSlider', ($timeout, $q, $log) => ({
           return;
         }
 
-        options = angular.fromJson(scope.options);
+        options = angular.copy(scope.options);
 
         api.updateOptions(options);
       });

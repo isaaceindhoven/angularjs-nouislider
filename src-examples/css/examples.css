@@ -24,3 +24,11 @@ article {
   min-width: 400px;
   padding: 12px;
 }
+
+ .noUi-value {
+   padding-top: 5px;
+ }
+
+.noUi-horizontal {
+  margin: 0 15px 60px;
+}

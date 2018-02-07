@@ -76,13 +76,11 @@ The directive exported by this module is called `noUiSlider` and can be used wit
 ### Using ngModel
 When using ngModel you can use the directive like this:
 
-<!-- {% raw %} -->
 ```html
 <div no-ui-slider
-     slider-options="{{ optionsWithoutStart }}"
+     slider-options="optionsWithoutStart"
      ng-model="sliderPositions"></div>
 ```
-<!-- {% endraw %}) -->
 
 In this case you don't have to add the `start` option to the noUiSlider options because the model value is used. In this case your scope could be:
 
@@ -104,13 +102,11 @@ Note that the directive uses the [`noUiSliderInstance.get()` and `noUiSliderInst
 When you don't want to use the ngModel you will probably want to use the API that `noUiSlider.create()` returns. This instance can be retreived from the directive by writing an expression in the `slider-created` attribute. Example:
 
 **Your model**
-<!-- {% raw %} -->
 ```html
 <div no-ui-slider
-     slider-options="{{ optionsWithStart }}"
+     slider-options="optionsWithStart"
      slider-created="onSliderCreated(api)"></div>
 ```
-<!-- {% endraw %}) -->
 
 **Your scope**
 ```javascript

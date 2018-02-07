@@ -19,6 +19,32 @@ noUiSliderExamplesApp.controller('examplesController', ($scope, $log) => {
     start: $scope.sliderPositions,
   });
 
+  $scope.percentage = 25;
+
+  $scope.optionsPercentage = {
+    step: 5,
+    range: {
+      min: 15,
+      max: 70,
+    },
+    pips: {
+      mode: 'steps',
+      density: 7,
+      filter: (percentage) => {
+        const showText = percentage % 25 && percentage !== 5 && percentage !== 70;
+        return showText ? 2 : 1;
+      },
+      format: {
+        to: input => `${ input }%`,
+        from: input => parseInt(input.replace('%', ''), 10),
+      },
+    },
+    format: {
+      to: input => parseInt(input, 10),
+      from: input => input.toString(),
+    },
+  };
+
   $scope.jsonEditorOptions = {};
 
   $scope.onSliderCreated = (sliderInstance) => {

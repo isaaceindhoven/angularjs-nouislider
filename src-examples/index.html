@@ -13,7 +13,7 @@
     <h2>Slider without ngModel</h2>
 
     <div no-ui-slider
-         slider-options="{{ optionsWithStart }}"
+         slider-options="optionsWithStart"
          slider-created="onSliderCreated(api)"></div>
 
     <angular-jsoneditor ng-model="optionsWithStart" options="jsonEditorOptions"></angular-jsoneditor>
@@ -23,13 +23,28 @@
     <h2>Slider with ngModel</h2>
 
     <div no-ui-slider
-         slider-options="{{ optionsWithoutStart }}"
+         slider-options="optionsWithoutStart"
          ng-model="sliderPositions"></div>
 
     <angular-jsoneditor ng-model="optionsWithoutStart" options="jsonEditorOptions"></angular-jsoneditor>
 
     <strong>Model:</strong>
     <pre>{{ sliderPositions | json }}</pre>
+  </article>
+
+  <article>
+    <h2>Percentage slider</h2>
+
+    <div no-ui-slider
+         slider-options="optionsPercentage"
+         ng-model="percentage"
+         class="percentage-slider"
+         slider-created="onSliderCreated(api)"></div>
+
+    <angular-jsoneditor ng-model="optionsPercentage" options="jsonEditorOptions"></angular-jsoneditor>
+
+    <strong>Model:</strong>
+    <pre>{{ percentage | json }}</pre>
   </article>
 </main>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/11.0.3/nouislider.min.js"></script>
