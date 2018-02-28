@@ -12,7 +12,7 @@
     "angular",
     "wrapper"
   ],
-  "homepage": "https://luudjanssen.github.io/angularjs-nouislider/",
+  "homepage": "https://isaaceindhoven.github.io/angularjs-nouislider/",
   "ignore": [
     "**/.*",
     "node_modules",

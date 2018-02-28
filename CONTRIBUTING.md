@@ -5,7 +5,7 @@ You want to contribute to this plugin? Great! To ensure changes can get through 
 Questions regarding the use can be posted on [Stackoverflow](https://stackoverflow.com/questions/tagged/angularjs-nouislider) using the 'angularjs-nouislider' tag. I'll check this tag as often as possible.
 
 ## Issues & feature request
-When you found an issue or have a feature request, please report it to the [GitHub repository](https://github.com/LuudJanssen/angularjs-nouislider/issues) and clearly describe your problem or feature request. And preferably a way to recreate the issue.
+When you found an issue or have a feature request, please report it to the [GitHub repository](https://github.com/isaaceindhoven/angularjs-nouislider/issues) and clearly describe your problem or feature request. And preferably a way to recreate the issue.
 
 ## Submitting a pull request
 You can also create pull requests when you've fixed a bug or introduced a new feature. Please fork the repository and follow the following steps to get the development environment up and running:

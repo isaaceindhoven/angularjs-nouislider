@@ -15,7 +15,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/LuudJanssen/angularjs-nouislider.git"
+    "url": "git+https://github.com/isaaceindhoven/angularjs-nouislider.git"
   },
   "keywords": [
     "nouislider",
@@ -26,9 +26,9 @@
   "author": "Luud Janssen",
   "license": "WTFPL",
   "bugs": {
-    "url": "https://github.com/LuudJanssen/angularjs-nouislider/issues"
+    "url": "https://github.com/isaaceindhoven/angularjs-nouislider/issues"
   },
-  "homepage": "https://luudjanssen.github.io/angularjs-nouislider/",
+  "homepage": "https://isaaceindhoven.github.io/angularjs-nouislider/",
   "dependencies": {
     "angular": "^1.6.8",
     "nouislider": "^11.0.3"

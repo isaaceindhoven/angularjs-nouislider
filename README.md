@@ -2,7 +2,7 @@
 An AngularJS wrapper for the [noUiSlider](https://refreshless.com/nouislider/) range slider with minimal overhead. The module is ~2kb when minimized and gzipped.
 
 ## Demo
-Two demos can be found [here](https://luudjanssen.github.io/angularjs-nouislider/examples). One demo without the use of `ngModel` and one with the use of `ngModel`.
+Two demos can be found [here](https://isaaceindhoven.github.io/angularjs-nouislider/examples). One demo without the use of `ngModel` and one with the use of `ngModel`.
 
 ## Installation
 angularjs-nouislider does not include Angular nor does it include noUiSlider, therefore Angular and noUiSlider need to
@@ -27,14 +27,14 @@ yarn add angularjs-nouislider
 ```
 
 ### Downloading the source (not recommended)
-You can download the [`angularjs-nouislider.js`](https://raw.githubusercontent.com/LuudJanssen/angularjs-nouislider/master/dist/angularjs-nouislider.js) and [`angularjs-nouislider.min.js`](https://raw.githubusercontent.com/LuudJanssen/angularjs-nouislider/master/dist/angularjs-nouislider.min.js) source in the dist folder and import them using a `<script>` tag. angularjs-nouislider needs to be imported **after** Angular and noUiSlider are imported.
+You can download the [`angularjs-nouislider.js`](https://raw.githubusercontent.com/isaaceindhoven/angularjs-nouislider/master/dist/angularjs-nouislider.js) and [`angularjs-nouislider.min.js`](https://raw.githubusercontent.com/isaaceindhoven/angularjs-nouislider/master/dist/angularjs-nouislider.min.js) source in the dist folder and import them using a `<script>` tag. angularjs-nouislider needs to be imported **after** Angular and noUiSlider are imported.
 ```html
 <script src="path/to/angular.min.js"></script>
 <script src="path/to/nouislider.min.js"></script>
 <script src="path/to/angularjs-nouislider.min.js"></script>
 ```
 
-*It is recommended that you also download the [`angularjs-nouislider.js.map`](https://raw.githubusercontent.com/LuudJanssen/angularjs-nouislider/master/dist/angularjs-nouislider.js.map)  and / or [`angularjs-nouislider.min.js.map`](https://raw.githubusercontent.com/LuudJanssen/angularjs-nouislider/master/dist/angularjs-nouislider.min.js.map) files and put them in the same folder to enable sourcemaps for easy debugging.*
+*It is recommended that you also download the [`angularjs-nouislider.js.map`](https://raw.githubusercontent.com/isaaceindhoven/angularjs-nouislider/master/dist/angularjs-nouislider.js.map)  and / or [`angularjs-nouislider.min.js.map`](https://raw.githubusercontent.com/isaaceindhoven/angularjs-nouislider/master/dist/angularjs-nouislider.min.js.map) files and put them in the same folder to enable sourcemaps for easy debugging.*
 
 ## Usage
 The module is wrapped using a [Universal Module Definition (UMD)](https://github.com/umdjs/umd). This way it can be included multiple ways:
@@ -71,7 +71,7 @@ angular.module('myModule', ['noUiSlider']);
 ```
 
 ## Examples
-The directive exported by this module is called `noUiSlider` and can be used with and without `ngModel`. Examples can be found [here](https://luudjanssen.github.io/angularjs-nouislider/examples)
+The directive exported by this module is called `noUiSlider` and can be used with and without `ngModel`. Examples can be found [here](https://isaaceindhoven.github.io/angularjs-nouislider/examples)
 
 ### Using ngModel
 When using ngModel you can use the directive like this:
