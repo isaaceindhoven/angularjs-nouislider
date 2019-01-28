@@ -3,7 +3,6 @@ const path = require('path');
 const libraryName = 'angularjs-nouislider';
 
 module.exports = {
-  entry: './src/index.js',
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: libraryName + '.js',
@@ -36,4 +35,5 @@ module.exports = {
       root: 'noUiSlider',
     },
   },
+  mode: 'development',
 };

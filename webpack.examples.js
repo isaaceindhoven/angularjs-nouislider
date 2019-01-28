@@ -1,8 +1,7 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
-const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = {
   entry: './src-examples/js/examples',
@@ -26,25 +25,22 @@ module.exports = {
       },
       {
         test: /\.css$/,
-        use: ExtractTextPlugin.extract({
-          fallback: 'style-loader',
-          use: [
-            { loader: 'css-loader', options: { minimize: true } },
-          ],
-        }),
+        use: [
+          MiniCssExtractPlugin.loader,
+          'style-loader',
+          'css-loader',
+        ]
       },
     ],
   },
   plugins: [
     new CleanWebpackPlugin(['examples']),
-    new ExtractTextPlugin('examples.css'),
+    new MiniCssExtractPlugin({
+      filename: "[name].css",
+      chunkFilename: "[id].css",
+    }),
     new HtmlWebpackPlugin({
       template: './src-examples/index.html',
-    }),
-    new UglifyJSPlugin({
-      sourceMap: true,
-      parallel: true,
-      cache: true,
     }),
   ],
   devtool: 'source-map',
@@ -54,4 +50,5 @@ module.exports = {
   externals: {
     angular: 'angular',
   },
+  mode: 'production',
 };
