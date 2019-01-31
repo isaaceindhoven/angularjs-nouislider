@@ -2,11 +2,13 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
+const TerserPlugin = require('terser-webpack-plugin');
 
 module.exports = {
   entry: './src-examples/js/examples',
   output: {
-    filename: 'examples.js',
+    filename: '[name].[chunkhash].js',
     path: path.resolve(__dirname, 'examples'),
     publicPath: '',
   },
@@ -27,10 +29,15 @@ module.exports = {
         test: /\.css$/,
         use: [
           MiniCssExtractPlugin.loader,
-          'style-loader',
           'css-loader',
         ],
       },
+    ],
+  },
+  optimization: {
+    minimizer: [
+      new TerserPlugin(),
+      new OptimizeCSSAssetsPlugin(),
     ],
   },
   plugins: [

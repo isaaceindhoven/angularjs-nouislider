@@ -1,4 +1,14 @@
 {
-  "presets": ["@babel/preset-env"],
-  "plugins": ["angularjs-annotate"]
+  "presets": [
+    [
+      "@babel/preset-env", 
+      {
+        "useBuiltIns": "usage"
+      }
+    ],
+  ],
+  "plugins": [
+    "@babel/plugin-syntax-dynamic-import", 
+    "angularjs-annotate"
+  ]
 }
