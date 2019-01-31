@@ -1,5 +1,5 @@
 # angularjs-nouislider
-An AngularJS wrapper for the [noUiSlider](https://refreshless.com/nouislider/) range slider with minimal overhead. The module is ~2kb when minimized and gzipped.
+An AngularJS wrapper for the [noUiSlider](https://refreshless.com/nouislider/) range slider with minimal overhead. The module is ~1kb when minimized and gzipped.
 
 ## Demo
 Two demos can be found [here](https://isaaceindhoven.github.io/angularjs-nouislider/examples). One demo without the use of `ngModel` and one with the use of `ngModel`.
@@ -144,4 +144,4 @@ To stick with [Angular's `$on` syntax](https://docs.angularjs.org/api/ng/type/$r
 The `slider-options` attribute is being watched by the directive. Every time a change in the options is detected, the [`noUiSliderInstance.updateOptions()`](https://refreshless.com/nouislider/more/#section-update) method will be called which updates the slider according to the current settings. Note that the [`noUiSliderInstance.updateOptions()`](https://refreshless.com/nouislider/more/#section-update) method only updates for the 'margin', 'limit', 'step', 'range', 'animate' and 'snap' options. For updating other options you should destroy the instance and create a new one.
 
 ## License
-Just like [noUiSlider's license](https://github.com/leongersen/noUiSlider#license) this plugin is licensed [WTFPL](http://www.wtfpl.net/about/). You can use it **for free** and **without any attribution**, in any personal or commercial project. You may also fork the project and re-release it under another license you prefer.
+Just like [noUiSlider's license](https://github.com/leongersen/noUiSlider#license) this plugin is licensed [MIT](https://choosealicense.com/licenses/mit/). You can use it **for free** and **without any attribution**, in any personal or commercial project.
