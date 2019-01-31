@@ -1,5 +1,8 @@
 import angular from 'angular';
 import 'angular-jsoneditor';
+import 'nouislider';
+import 'nouislider/distribute/nouislider.css';
+import '../../src/index';
 import '../css/examples.css';
 
 const noUiSliderExamplesApp = angular.module('noUiSliderExamplesApp', ['noUiSlider', 'angular-jsoneditor']);
