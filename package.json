@@ -29,7 +29,7 @@
     "@babel/polyfill": "^7.2.5",
     "angular": "^1.6.8",
     "eslint-plugin-import": "^2.16.0",
-    "nouislider": "^11.0.3"
+    "nouislider": "^12.1.0"
   },
   "devDependencies": {
     "@babel/core": "^7.2.2",
