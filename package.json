@@ -4,8 +4,8 @@
   "description": "An AngularJS wrapper for the noUiSlider range slider with minimal overhead.",
   "main": "dist/angularjs-nouislider.js",
   "scripts": {
-    "build": "webpack --config webpack.minify.js",
-    "watch": "webpack --watch --config webpack.minify.js",
+    "build": "webpack --config webpack.develop.js && webpack --config webpack.production.js",
+    "watch": "webpack --watch --config webpack.production.js",
     "examples": "webpack --config webpack.examples.js",
     "start": "webpack-dev-server --open --config webpack.examples.js",
     "start-build-first": "webpack --config webpack.minify.js && webpack-dev-server --open --config webpack.examples.js"
