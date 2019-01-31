@@ -1,9 +1,9 @@
 const merge = require('webpack-merge');
-const build = require('./webpack.build');
+const develop = require('./webpack.develop');
 
-module.exports = merge(build, {
+module.exports = merge(develop, {
   output: {
-    filename: build.output.library + '.min.js',
+    filename: `${ develop.output.library }.min.js`,
   },
   mode: 'production',
 });

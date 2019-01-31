@@ -29,15 +29,15 @@ module.exports = {
           MiniCssExtractPlugin.loader,
           'style-loader',
           'css-loader',
-        ]
+        ],
       },
     ],
   },
   plugins: [
     new CleanWebpackPlugin(['examples']),
     new MiniCssExtractPlugin({
-      filename: "[name].css",
-      chunkFilename: "[id].css",
+      filename: '[name].css',
+      chunkFilename: '[id].css',
     }),
     new HtmlWebpackPlugin({
       template: './src-examples/index.html',
