@@ -47,8 +47,5 @@ module.exports = {
   devServer: {
     contentBase: ['./examples', './dist', './'],
   },
-  externals: {
-    angular: 'angular',
-  },
   mode: 'production',
 };
