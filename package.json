@@ -7,8 +7,7 @@
     "build": "webpack --config webpack.develop.js && webpack --config webpack.production.js",
     "watch": "webpack --watch --config webpack.production.js",
     "examples": "webpack --config webpack.examples.js",
-    "start": "webpack-dev-server --open --config webpack.examples.js",
-    "start-build-first": "webpack --config webpack.minify.js && webpack-dev-server --open --config webpack.examples.js"
+    "start": "webpack-dev-server --open --config webpack.examples.js"
   },
   "repository": {
     "type": "git",
