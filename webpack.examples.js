@@ -1,13 +1,14 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
-const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
+const TerserPlugin = require('terser-webpack-plugin');
 
 module.exports = {
   entry: './src-examples/js/examples',
   output: {
-    filename: 'examples.js',
+    filename: '[name].[chunkhash].js',
     path: path.resolve(__dirname, 'examples'),
     publicPath: '',
   },
@@ -26,32 +27,37 @@ module.exports = {
       },
       {
         test: /\.css$/,
-        use: ExtractTextPlugin.extract({
-          fallback: 'style-loader',
-          use: [
-            { loader: 'css-loader', options: { minimize: true } },
-          ],
-        }),
+        use: [
+          MiniCssExtractPlugin.loader,
+          'css-loader',
+        ],
       },
+    ],
+  },
+  optimization: {
+    minimizer: [
+      new TerserPlugin({
+        cache: true,
+        parallel: true,
+        sourceMap: true,
+        extractComments: true,
+      }),
+      new OptimizeCSSAssetsPlugin(),
     ],
   },
   plugins: [
     new CleanWebpackPlugin(['examples']),
-    new ExtractTextPlugin('examples.css'),
+    new MiniCssExtractPlugin({
+      filename: '[name].css',
+      chunkFilename: '[id].css',
+    }),
     new HtmlWebpackPlugin({
       template: './src-examples/index.html',
-    }),
-    new UglifyJSPlugin({
-      sourceMap: true,
-      parallel: true,
-      cache: true,
     }),
   ],
   devtool: 'source-map',
   devServer: {
     contentBase: ['./examples', './dist', './'],
   },
-  externals: {
-    angular: 'angular',
-  },
+  mode: 'production',
 };

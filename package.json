@@ -1,17 +1,13 @@
 {
   "name": "angularjs-nouislider",
-  "version": "0.2.0",
+  "version": "1.0.0",
   "description": "An AngularJS wrapper for the noUiSlider range slider with minimal overhead.",
   "main": "dist/angularjs-nouislider.js",
   "scripts": {
-    "build": "webpack --config webpack.build.js && webpack --config webpack.minify.js",
-    "transpile": "webpack --config webpack.build.js",
-    "transpile-watch": "webpack --watch --config webpack.build.js",
-    "minify": "webpack --config webpack.minify.js",
-    "minify-watch": "webpack --watch --config webpack.minify.js",
+    "build": "webpack --config webpack.develop.js && webpack --config webpack.production.js",
+    "watch": "webpack --watch --config webpack.production.js",
     "examples": "webpack --config webpack.examples.js",
-    "start": "webpack-dev-server --open --config webpack.examples.js",
-    "start-build-first": "webpack --config webpack.minify.js && webpack-dev-server --open --config webpack.examples.js"
+    "start": "webpack-dev-server --open --config webpack.examples.js"
   },
   "repository": {
     "type": "git",
@@ -30,27 +26,31 @@
   },
   "homepage": "https://isaaceindhoven.github.io/angularjs-nouislider/",
   "dependencies": {
-    "angular": "^1.6.8",
-    "nouislider": "^11.0.3"
+    "angular": "^1.7.6",
+    "nouislider": "^12.1.0"
   },
   "devDependencies": {
+    "@babel/core": "^7.2.2",
+    "@babel/plugin-syntax-dynamic-import": "^7.2.0",
+    "@babel/polyfill": "^7.2.5",
+    "@babel/preset-env": "^7.3.1",
     "angular-jsoneditor": "0.0.2",
-    "babel-core": "^6.26.0",
-    "babel-loader": "^7.1.2",
-    "babel-plugin-angularjs-annotate": "^0.8.2",
-    "babel-preset-airbnb": "^2.4.0",
-    "clean-webpack-plugin": "^0.1.18",
-    "css-loader": "^0.28.9",
-    "eslint": "^4.16.0",
-    "eslint-config-airbnb-base": "^12.1.0",
-    "eslint-loader": "^1.9.0",
-    "eslint-plugin-import": "^2.8.0",
-    "extract-text-webpack-plugin": "^3.0.2",
-    "html-webpack-plugin": "^2.30.1",
-    "style-loader": "^0.20.1",
-    "uglifyjs-webpack-plugin": "^1.1.8",
-    "webpack": "^3.10.0",
-    "webpack-dev-server": "^2.11.1",
+    "babel-eslint": "^10.0.1",
+    "babel-loader": "^8.0.5",
+    "babel-plugin-angularjs-annotate": "^0.10.0",
+    "clean-webpack-plugin": "^1.0.1",
+    "css-loader": "^2.1.0",
+    "eslint": "^5.12.1",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-loader": "^2.1.1",
+    "eslint-plugin-import": "^2.16.0",
+    "html-webpack-plugin": "^3.2.0",
+    "mini-css-extract-plugin": "^0.5.0",
+    "optimize-css-assets-webpack-plugin": "^5.0.1",
+    "terser-webpack-plugin": "^1.2.1",
+    "webpack": "^4.29.0",
+    "webpack-cli": "^3.2.1",
+    "webpack-dev-server": "^3.1.14",
     "webpack-merge": "^4.1.1"
   }
 }
