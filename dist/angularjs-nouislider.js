@@ -7,7 +7,7 @@
 		exports["angularjs-nouislider"] = factory(require("angular"), require("nouislider"));
 	else
 		root["angularjs-nouislider"] = factory(root["angular"], root["noUiSlider"]);
-})(typeof self !== 'undefined' ? self : this, function(__WEBPACK_EXTERNAL_MODULE_1__, __WEBPACK_EXTERNAL_MODULE_4__) {
+})(window, function(__WEBPACK_EXTERNAL_MODULE_angular__, __WEBPACK_EXTERNAL_MODULE_nouislider__) {
 return /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
 /******/ 	var installedModules = {};
@@ -46,12 +46,32 @@ return /******/ (function(modules) { // webpackBootstrap
 /******/ 	// define getter function for harmony exports
 /******/ 	__webpack_require__.d = function(exports, name, getter) {
 /******/ 		if(!__webpack_require__.o(exports, name)) {
-/******/ 			Object.defineProperty(exports, name, {
-/******/ 				configurable: false,
-/******/ 				enumerable: true,
-/******/ 				get: getter
-/******/ 			});
+/******/ 			Object.defineProperty(exports, name, { enumerable: true, get: getter });
 /******/ 		}
+/******/ 	};
+/******/
+/******/ 	// define __esModule on exports
+/******/ 	__webpack_require__.r = function(exports) {
+/******/ 		if(typeof Symbol !== 'undefined' && Symbol.toStringTag) {
+/******/ 			Object.defineProperty(exports, Symbol.toStringTag, { value: 'Module' });
+/******/ 		}
+/******/ 		Object.defineProperty(exports, '__esModule', { value: true });
+/******/ 	};
+/******/
+/******/ 	// create a fake namespace object
+/******/ 	// mode & 1: value is a module id, require it
+/******/ 	// mode & 2: merge all properties of value into the ns
+/******/ 	// mode & 4: return value when already ns object
+/******/ 	// mode & 8|1: behave like require
+/******/ 	__webpack_require__.t = function(value, mode) {
+/******/ 		if(mode & 1) value = __webpack_require__(value);
+/******/ 		if(mode & 8) return value;
+/******/ 		if((mode & 4) && typeof value === 'object' && value && value.__esModule) return value;
+/******/ 		var ns = Object.create(null);
+/******/ 		__webpack_require__.r(ns);
+/******/ 		Object.defineProperty(ns, 'default', { enumerable: true, value: value });
+/******/ 		if(mode & 2 && typeof value != 'string') for(var key in value) __webpack_require__.d(ns, key, function(key) { return value[key]; }.bind(null, key));
+/******/ 		return ns;
 /******/ 	};
 /******/
 /******/ 	// getDefaultExport function for compatibility with non-harmony modules
@@ -69,75 +89,31 @@ return /******/ (function(modules) { // webpackBootstrap
 /******/ 	// __webpack_public_path__
 /******/ 	__webpack_require__.p = "";
 /******/
+/******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 2);
+/******/ 	return __webpack_require__(__webpack_require__.s = "./src/index.js");
 /******/ })
 /************************************************************************/
-/******/ ([
-/* 0 */
-/***/ (function(module, exports, __webpack_require__) {
+/******/ ({
+
+/***/ "./src/directive.js":
+/*!**************************!*\
+  !*** ./src/directive.js ***!
+  \**************************/
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var angular__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! angular */ "angular");
+/* harmony import */ var angular__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(angular__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var nouislider__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! nouislider */ "nouislider");
+/* harmony import */ var nouislider__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(nouislider__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _module__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./module */ "./src/module.js");
 
 
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.module = exports.moduleName = undefined;
 
-var _angular = __webpack_require__(1);
-
-var _angular2 = _interopRequireDefault(_angular);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-var moduleName = exports.moduleName = 'noUiSlider';
-var _module = _angular2.default.module(moduleName, []);
-exports.module = _module;
-
-/***/ }),
-/* 1 */
-/***/ (function(module, exports) {
-
-module.exports = __WEBPACK_EXTERNAL_MODULE_1__;
-
-/***/ }),
-/* 2 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _module = __webpack_require__(0);
-
-__webpack_require__(3);
-
-exports.default = _module.moduleName;
-
-/***/ }),
-/* 3 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-var _angular = __webpack_require__(1);
-
-var _angular2 = _interopRequireDefault(_angular);
-
-var _nouislider = __webpack_require__(4);
-
-var _nouislider2 = _interopRequireDefault(_nouislider);
-
-var _module2 = __webpack_require__(0);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-_module2.module.directive('noUiSlider', ['$timeout', '$q', '$log', function ($timeout, $q, $log) {
+_module__WEBPACK_IMPORTED_MODULE_2__["module"].directive('noUiSlider', ["$timeout", "$q", "$log", function ($timeout, $q, $log) {
   return {
     restrict: 'AE',
     require: '?ngModel',
@@ -147,8 +123,7 @@ _module2.module.directive('noUiSlider', ['$timeout', '$q', '$log', function ($ti
     },
     link: function link(scope, element, attrs, ngModel) {
       var htmlElement = element[0];
-      var options = _angular2.default.copy(scope.options);
-
+      var options = angular__WEBPACK_IMPORTED_MODULE_0___default.a.copy(scope.options);
       /**
        * Extends the API returned by noUiSlider with the `$on` function which wraps the `on` function
        * to use Angular.
@@ -156,6 +131,7 @@ _module2.module.directive('noUiSlider', ['$timeout', '$q', '$log', function ($ti
        * @param {Object} api The API instance returned by the `noUiSlider.create()` method
        * @return {Object} The API instance with the added `$on` function
        */
+
       function extendApi(api) {
         api.$on = function (eventName, callback) {
           var wrappedCallback = function wrappedCallback() {
@@ -165,7 +141,6 @@ _module2.module.directive('noUiSlider', ['$timeout', '$q', '$log', function ($ti
           };
 
           api.on(eventName, wrappedCallback);
-
           return function () {
             api.off(eventName, wrappedCallback);
           };
@@ -173,23 +148,25 @@ _module2.module.directive('noUiSlider', ['$timeout', '$q', '$log', function ($ti
 
         return api;
       }
-
       /**
        * Creates a watcher that calls the function given by the `slider-created` directive attribute.
        * The watcher fires every time the `slider-created` function changes.
        *
        * @param {Object} api The API instance returned by the `noUiSlider.create()` method
        */
+
+
       function setCreatedWatcher(api) {
         scope.$watch('created', function (newCallback) {
-          if (!_angular2.default.isFunction(newCallback)) {
+          if (!angular__WEBPACK_IMPORTED_MODULE_0___default.a.isFunction(newCallback)) {
             return;
           }
 
-          newCallback({ api: api });
+          newCallback({
+            api: api
+          });
         });
       }
-
       /**
        * Creates a watcher that looks for changes in the `slider-options` directive attribute. When a
        * change is detected the options for the noUiSlider instance are updated. Note that only the
@@ -199,18 +176,18 @@ _module2.module.directive('noUiSlider', ['$timeout', '$q', '$log', function ($ti
        *
        * @param {Object} api The API instance returned by the `noUiSlider.create()` method
        */
+
+
       function setOptionsWatcher(api) {
         scope.$watch('options', function (newOptions, oldOptions) {
-          if (_angular2.default.equals(newOptions, oldOptions)) {
+          if (angular__WEBPACK_IMPORTED_MODULE_0___default.a.equals(newOptions, oldOptions)) {
             return;
           }
 
-          options = _angular2.default.copy(scope.options);
-
+          options = angular__WEBPACK_IMPORTED_MODULE_0___default.a.copy(scope.options);
           api.updateOptions(options);
         });
       }
-
       /**
        * Add ngModel controls to the directive. This allows the use of ngModel to set and get the
        * value in the slider. It uses the noUiSlider API's get and set functions, so no custom
@@ -218,6 +195,8 @@ _module2.module.directive('noUiSlider', ['$timeout', '$q', '$log', function ($ti
        *
        * @param {Object} api The API instance returned by the `noUiSlider.create()` method
        */
+
+
       function bindNgModelControls(api) {
         ngModel.$render = function () {
           api.set(ngModel.$modelValue);
@@ -228,7 +207,6 @@ _module2.module.directive('noUiSlider', ['$timeout', '$q', '$log', function ($ti
           ngModel.$setViewValue(positions);
         });
       }
-
       /**
        * A utility function that returns a promise which resolves when ngModel is correctly loaded,
        * using $timeout.
@@ -238,6 +216,8 @@ _module2.module.directive('noUiSlider', ['$timeout', '$q', '$log', function ($ti
        * and thus the promise rejects. If the value entered for ngModel is correct, the promise
        * resolves with this value.
        */
+
+
       function initializeNgModel() {
         if (ngModel === null) {
           return $q.resolve(null);
@@ -245,37 +225,37 @@ _module2.module.directive('noUiSlider', ['$timeout', '$q', '$log', function ($ti
 
         return $q(function (resolve) {
           $timeout(function () {
-            if (!(_angular2.default.isArray(ngModel.$modelValue) || _angular2.default.isNumber(ngModel.$modelValue))) {
-              throw new Error('Value provided in ngModel is not a valid noUislider start position. Expected a Number or an Array of Numbers, found: ' + ngModel.$modelValue);
+            if (!(angular__WEBPACK_IMPORTED_MODULE_0___default.a.isArray(ngModel.$modelValue) || angular__WEBPACK_IMPORTED_MODULE_0___default.a.isNumber(ngModel.$modelValue))) {
+              throw new Error("Value provided in ngModel is not a valid noUislider start position. Expected a Number or an Array of Numbers, found: ".concat(ngModel.$modelValue));
             }
 
             resolve(ngModel.$modelValue);
           });
         });
       }
-
       /**
        * Creates a noUiSlider instance.
        */
-      function createInstance() {
-        var api = extendApi(_nouislider2.default.create(htmlElement, options));
 
+
+      function createInstance() {
+        var api = extendApi(nouislider__WEBPACK_IMPORTED_MODULE_1___default.a.create(htmlElement, options));
         setCreatedWatcher(api);
         setOptionsWatcher(api);
 
         if (ngModel !== null) {
           bindNgModelControls(api);
         }
-      }
+      } // Wait for ngModel to be initialized
 
-      // Wait for ngModel to be initialized
+
       initializeNgModel().then(function ($modelValue) {
         if ($modelValue !== null) {
           // If ngModel is being used, (over)write the start option for the noUiSlider options
           options.start = $modelValue;
-        }
+        } // Create a noUiSlider instance
 
-        // Create a noUiSlider instance
+
         createInstance();
       }).catch($log.error);
     }
@@ -283,12 +263,65 @@ _module2.module.directive('noUiSlider', ['$timeout', '$q', '$log', function ($ti
 }]);
 
 /***/ }),
-/* 4 */
+
+/***/ "./src/index.js":
+/*!**********************!*\
+  !*** ./src/index.js ***!
+  \**********************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _module__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./module */ "./src/module.js");
+/* harmony import */ var _directive__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./directive */ "./src/directive.js");
+
+
+/* harmony default export */ __webpack_exports__["default"] = (_module__WEBPACK_IMPORTED_MODULE_0__["moduleName"]);
+
+/***/ }),
+
+/***/ "./src/module.js":
+/*!***********************!*\
+  !*** ./src/module.js ***!
+  \***********************/
+/*! exports provided: moduleName, module */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "moduleName", function() { return moduleName; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "module", function() { return module; });
+/* harmony import */ var angular__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! angular */ "angular");
+/* harmony import */ var angular__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(angular__WEBPACK_IMPORTED_MODULE_0__);
+
+var moduleName = 'noUiSlider';
+var module = angular__WEBPACK_IMPORTED_MODULE_0___default.a.module(moduleName, []);
+
+/***/ }),
+
+/***/ "angular":
+/*!**************************!*\
+  !*** external "angular" ***!
+  \**************************/
+/*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = __WEBPACK_EXTERNAL_MODULE_4__;
+module.exports = __WEBPACK_EXTERNAL_MODULE_angular__;
+
+/***/ }),
+
+/***/ "nouislider":
+/*!**********************************************************************************************************!*\
+  !*** external {"commonjs":"nouislider","commonjs2":"nouislider","amd":"nouislider","root":"noUiSlider"} ***!
+  \**********************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = __WEBPACK_EXTERNAL_MODULE_nouislider__;
 
 /***/ })
-/******/ ]);
+
+/******/ });
 });
 //# sourceMappingURL=angularjs-nouislider.js.map
