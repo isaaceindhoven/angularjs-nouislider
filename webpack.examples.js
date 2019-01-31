@@ -36,7 +36,12 @@ module.exports = {
   },
   optimization: {
     minimizer: [
-      new TerserPlugin(),
+      new TerserPlugin({
+        cache: true,
+        parallel: true,
+        sourceMap: true,
+        extractComments: true,
+      }),
       new OptimizeCSSAssetsPlugin(),
     ],
   },
