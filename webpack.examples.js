@@ -46,7 +46,7 @@ module.exports = {
     ],
   },
   plugins: [
-    new CleanWebpackPlugin(['examples']),
+    new CleanWebpackPlugin(),
     new MiniCssExtractPlugin({
       filename: '[name].css',
       chunkFilename: '[id].css',
