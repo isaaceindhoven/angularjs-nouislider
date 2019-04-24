@@ -1,6 +1,6 @@
 {
   "name": "angularjs-nouislider",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "An AngularJS wrapper for the noUiSlider range slider with minimal overhead.",
   "main": "dist/angularjs-nouislider.js",
   "scripts": {
@@ -27,7 +27,6 @@
   "homepage": "https://isaaceindhoven.github.io/angularjs-nouislider/",
   "dependencies": {
     "angular": "^1.7.8",
-    "core-js": "^3.0.1",
     "nouislider": "^13.1.5"
   },
   "devDependencies": {
