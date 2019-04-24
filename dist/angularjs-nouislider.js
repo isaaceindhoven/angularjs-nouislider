@@ -257,7 +257,7 @@ _module__WEBPACK_IMPORTED_MODULE_2__["module"].directive('noUiSlider', ["$timeou
 
 
         createInstance();
-      }).catch($log.error);
+      })["catch"]($log.error);
     }
   };
 }]);
