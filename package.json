@@ -27,7 +27,7 @@
   "homepage": "https://isaaceindhoven.github.io/angularjs-nouislider/",
   "dependencies": {
     "angular": "^1.7.9",
-    "nouislider": "^14.0.2"
+    "nouislider": "^14.1.1"
   },
   "devDependencies": {
     "@babel/core": "^7.4.5",
