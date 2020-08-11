@@ -21,7 +21,7 @@
     "tests"
   ],
   "dependencies": {
-    "angular": "^1.7.6",
-    "nouislider": "^12.1.0"
+    "angular": "^1.8.0",
+    "nouislider": "^14.6.0"
   }
 }
