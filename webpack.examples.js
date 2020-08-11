@@ -4,10 +4,7 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
-
-/* TODO: Remove this when new version of eslint-loader is released.
- * See https://github.com/webpack-contrib/eslint-loader/issues/271 for more information */
-const esLintFormatter = require('eslint/lib/cli-engine/formatters/stylish');
+const ESLintPlugin = require('eslint-webpack-plugin');
 
 module.exports = {
   entry: './src-examples/js/examples',
@@ -18,15 +15,6 @@ module.exports = {
   },
   module: {
     rules: [
-      {
-        test: /\.js$/,
-        exclude: /node_modules/,
-        loader: 'eslint-loader',
-        enforce: 'pre',
-        options: {
-          formatter: esLintFormatter,
-        },
-      },
       {
         test: /\.js$/,
         exclude: /node_modules/,
@@ -61,6 +49,7 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: './src-examples/index.html',
     }),
+    new ESLintPlugin(),
   ],
   devtool: 'source-map',
   devServer: {

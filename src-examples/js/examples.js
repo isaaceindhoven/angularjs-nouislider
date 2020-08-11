@@ -49,13 +49,13 @@ loadDependencies().then(({ angular, noUiSliderModule }) => {
           return showText ? 2 : 1;
         },
         format: {
-          to: input => `${ input }%`,
-          from: input => parseInt(input.replace('%', ''), 10),
+          to: (input) => `${ input }%`,
+          from: (input) => parseInt(input.replace('%', ''), 10),
         },
       },
       format: {
-        to: input => parseInt(input, 10),
-        from: input => input.toString(),
+        to: (input) => parseInt(input, 10),
+        from: (input) => input.toString(),
       },
     };
 
