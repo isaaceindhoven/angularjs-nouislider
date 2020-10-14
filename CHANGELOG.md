@@ -1,6 +1,11 @@
 # Changelog
 
-### 14.1.2
+### 14.1.3 (2020-10-14)
+- Updated all build dependencies
+- Updated Angular version from `1.8.0` to `1.8.1`
+- Updated NoUiSlider version from `14.1.1` to `14.6.2`
+
+### 14.1.2 (2020-08-11)
 - Updated all build dependencies
 - Updated Angular version from `1.7.9` to `1.8.0`
 - Updated NoUiSlider version from `14.1.1` to `14.1.2`
