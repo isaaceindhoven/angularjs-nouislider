@@ -22,14 +22,5 @@ module.exports = {
   },
   plugins: [new ESLintPlugin()],
   devtool: 'source-map',
-  externals: {
-    angular: 'angular',
-    nouislider: {
-      commonjs: 'nouislider',
-      commonjs2: 'nouislider',
-      amd: 'nouislider',
-      root: 'noUiSlider',
-    },
-  },
   mode: 'development',
 };
